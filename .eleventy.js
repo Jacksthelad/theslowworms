@@ -15,6 +15,11 @@ module.exports = function(eleventyConfig){
     });
   });
 
+    // Add a custom filter to replace spaces with dashes
+    eleventyConfig.addFilter("slugify", function(value) {
+      return value.replace(/\s+/g, '-').toLowerCase();
+    });
+
   return {
     dir: {
       input: "src",

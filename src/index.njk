@@ -8,7 +8,7 @@ order: 1
 {% set latestVideo = videos[0] %}
 <section class="bg-[#EEDBCC] text-[#362420] pt-5 pb-5">
   <div class="container mx-auto">
-    <a href="/blog/{{ latestVideo.title }}" class="block">
+    <a href="/blog/{{ latestVideo.title | slugify }}" class="block">
       <img src="{{ latestVideo.thumbnailUrl }}" alt="{{ latestVideo.title }}" class="mx-auto" />
       <h1 class="text-center text-2xl font-bold mt-2">{{ latestVideo.title }}</h1>
     </a>
@@ -20,7 +20,7 @@ order: 1
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {% for video in videos.slice(1) %}
       <div class="video-thumbnail">
-        <a href="/blog/{{ video.title }}">
+        <a href="/blog/{{ video.title | slugify }}">
           <img src="{{ video.thumbnailUrl }}" alt="{{ video.title }}" class="w-full" />
           <h2 class="text-lg font-semibold mt-2">{{ video.title }}</h2>
         </a>
