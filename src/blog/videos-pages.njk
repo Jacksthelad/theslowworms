@@ -1,0 +1,9 @@
+---
+pagination:
+    data: videos
+    size: 1
+    alias: video
+permalink: "blog/{{ video.title | slugify }}/"
+---
+
+{{ video.title }} is {{ video.description }} years old

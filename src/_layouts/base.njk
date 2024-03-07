@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2? 
+		family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+		{# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}"> #}
+		<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
+		<title>{{site.title}}{% if title %} - {{title}} {% endif %} </title>
+			<meta name="description" content="
+				{% if description %}
+					{{description}}
+				{% else %}
+					{{site.description}}
+				{% endif %}
+			"/>
+	</head>
+    <body class="bg-background">
+        {% include "partials/_navigation.njk" %}
+        <main class="max-w-3xl mx-auto py-12 min-h-screen"> 
+            {{content | safe}}
+        </main>
+    </body>
+</html>

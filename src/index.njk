@@ -1,0 +1,31 @@
+---
+layout: base
+title: Home
+tags: page
+order: 1
+---
+
+{% set latestVideo = videos[0] %}
+<section class="bg-[#EEDBCC] text-[#362420] pt-5 pb-5">
+  <div class="container mx-auto">
+    <a href="/blog/{{ latestVideo.title }}" class="block">
+      <img src="{{ latestVideo.thumbnailUrl }}" alt="{{ latestVideo.title }}" class="mx-auto" />
+      <h1 class="text-center text-2xl font-bold mt-2">{{ latestVideo.title }}</h1>
+    </a>
+  </div>
+</section>
+
+<section class="bg-[#EEDBCC] pt-5 pb-5">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {% for video in videos.slice(1) %}
+      <div class="video-thumbnail">
+        <a href="/blog/{{ video.title }}">
+          <img src="{{ video.thumbnailUrl }}" alt="{{ video.title }}" class="w-full" />
+          <h2 class="text-lg font-semibold mt-2">{{ video.title }}</h2>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
