@@ -1,5 +1,25 @@
 <!-- _includes/partials/_footer.njk-->
-<footer>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
+<footer class="text-center p-8">  
+  <div class="mb-6">
+    <img src="assets/images/the-slowworms_logo.png" alt="logo image" class="mx-auto w-48 h-auto">
+  </div>
+
+  <nav class="mb-6 font-bold">
+    {% for item in collections.page %}
+    <a href="{{ item.url }}"
+       class="{% if item.url == page.url %}text-blue-500{% else %}hover:text-blue-500{% endif %} mx-2"
+       aria-current="{% if item.url == page.url %}page{% endif %}">
+      {{ item.data.title }}
+    </a>
+    {% endfor %}
+  </nav>
+  
+  <div class="space-x-4">
+    <a href="https://instagram.com/yourusername" class="hover:text-blue-500">
+      <i class="fab fa-instagram fa-xl"></i>
+    </a>
+    <a href="https://youtube.com/yourchannel" class="hover:text-blue-500">
+      <i class="fab fa-youtube fa-xl"></i>
+    </a>
+  </div>
 </footer>

@@ -1,12 +1,19 @@
-<header class="bg-background text-gray-50 py-4">
-    <nav class="max-w-2xl mx-auto text-lg space-x-6">
+<header class="bg-background text-secondary border-b border-text px-8 py-4 flex justify-between relative">
+    <nav class="w-5/12 text-lg space-x-6 font-bold drop-shadow-strong">
         {% for item in collections.page %}
             <a href="{{ item.url }}"
             {% if item.url == page.url %}
                 aria-current='page' data-state='active'
             {% endif %}
-            class="hover:text-sky-400"
-            >{{ item.data.title }}</a>
+            class="hover:text-sky-400">{{ item.data.title }}</a>
         {% endfor %}
     </nav>
+
+    <!-- Adjust the logo's positioning -->
+    <div class="bg-background w-1/12 absolute left-1/2 transform -translate-x-1/2 top-0 z-10">
+        <img src="assets/images/the-slowworms_logo.png" alt="logo image" style="width: 100%; height: auto;">
+    </div>
+    
+    <!-- Placeholder for future content or balance -->
+    <div class="w-5/12"></div>
 </header>

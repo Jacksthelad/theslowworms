@@ -8,6 +8,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2? 
 		family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		{# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}"> #}
 		<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
 		<title>{{site.title}}{% if title %} - {{title}} {% endif %} </title>
@@ -21,8 +22,9 @@
 	</head>
     <body class="bg-background">
         {% include "partials/_navigation.njk" %}
-        <main class="max-w-3xl mx-auto py-12 min-h-screen"> 
+        <main class="max-w-3xl mx-auto pt-16 pb-12 min-h-screen"> 
             {{content | safe}}
         </main>
+		{% include "partials/_footer.njk" %}
     </body>
 </html>
